@@ -14,3 +14,5 @@ Você escolhe quantos caracteres quer e ele monta uma senha aleatória com letra
 
 Quantos caracteres vai ter sua senha: 10
 Sua senha gerada foi: F3g@d9P#lA
+
+Feito por [OreOFDev](https://github.com/OreOFDev) 😄
