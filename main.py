@@ -1,37 +1,54 @@
-# aqui eu importo random para eu conseguir escolher escolhas aleatorias tipo numeros simbolos etc 
-import random
+# Importei os modulos random string time e pyperclip usando um metodo de importar varios modulos em uma linha
+import random as r,string as s,time as t, pyperclip as p 
 
-# aqui eu importo string para eu conseguir todas as strings uppercase / maiuscula e lowercase / minuscula
-import string
+# c = caracteres / pergunto quantos caracteres a pessoa quer
+c = input("Quantos caracteres voce deseja na sua senha: ")
 
-# aqui eu pergunto quantos caracteres vai ter na sua senha tipo 5 = agaw5
-caracteres = input("Quantos caracteres vai ter sua senha: ")
+# tente
+try:
+    # trasnforma o c em int
+    c = int(c)
 
-# aqui eu verifico se o caracteres e um digito / numero se for transforma em numero de verdade pois o input retorna uma string
-if caracteres.isdigit():
-    caracteres = int(caracteres)
+    # criei a variavel senha que é igual a nada
+    senha = ""
 
-    # a stringupper vale ABCDEFGH... todas as letras do alfabeto
-    stringsUpper = string.ascii_uppercase
+    # criei a variavel simbolos que eu mesmo escolhi eles
+    simbolos = "!@#$%&*"
 
-    # a stringlower vale abcdefgh... todas as letras do alfabeto
-    stringsLower = string.ascii_lowercase
+    # criei as variaveis de numeros letras minusculas e maiusculas usando o modulo s = string que eu importei no comeco
+    numeros = s.digits
+    letrasMinusculas = s.ascii_lowercase
+    letrasMaiusculas = s. ascii_uppercase
 
-    # o numeros vale 12345... todos os numeros 1 a 10
-    numeros = string.digits
+    # criei a variavel tudo que vai ser igual a todas as variaveis anteriores exemplo: !@#$%&*0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+    tudo = simbolos + numeros + letrasMinusculas + letrasMaiusculas 
 
-    # os simbolos vale esses abaixo
-    simbolos = "!@#$%^&*"
+    # faco um for com o range de c = caracteres
+    for i in range(c):
 
-    # aqui a gente junta tudo para depois usar eles vai ficar tipo ABCDE.abcde.1234.#!@%
-    todos = stringsUpper + stringsLower + numeros + simbolos
+        # ai ele vais somando ate dar os caracteres que a pessoa pediu
+        senha += r.choice(tudo)
+    
+    # printo gerando senha para ficar mais profissional
+    print("Gerando Senha Aguarde...")
 
-    # aqui a senha vale uma string vazia a entra uma escolha aleatoria do todos e junta aleatoriamente
-    senha = "".join(random.choices(todos, k=caracteres))
+    # deixo o codigo parar por 1.5 segundos para realmente parecer que ta gerando
+    t.sleep(1.5)
 
-    # aqui printa sua senha foi gerada : ai a senha formatada
-    print(f"Sua senha gerada foi: {senha}")
+    # printo a senha
+    print(f"A Sua Senha Gerada É {senha}")
 
-else:
-    # se nao for um numero printa digite um inteiro
-    print("Digite um inteiro!")
+    # pergunto se quer copiar e deixo na variavel co = copiar  e transformo em lowercase
+    co = input("Deseja copiar a senha? (s/n): ").lower()
+
+    # se co for igual a s copio a senha
+    if co == "s":
+        p.copy(senha)
+
+    # senao so passo / o codigo so para
+    else:
+        pass
+     
+# se la no comeco dar erro para transformar o c em int ele vai dar esse erro de ValueError e passar
+except ValueError:
+    pass
