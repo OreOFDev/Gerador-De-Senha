@@ -1,19 +1,7 @@
-# Gerador de Senha em Python
+# Gerador De Senha
+esse repositorio e um projeto de gerador de senha simples que eu fiz 
+dia 15/05/2025 eu atualizei ele pois estava muito iniciante
 
-Esse é um gerador de senha simples feito em Python.  
-Você escolhe quantos caracteres quer e ele monta uma senha aleatória com letras, números e símbolos.
+ele copia pede caracteres e gera a senha usando alguns modulos
 
-### Como funciona:
-
-- Pergunta quantos caracteres você quer
-- Verifica se você digitou um número
-- Junta letras maiúsculas, minúsculas, números e símbolos tipo `!@#`
-- Gera a senha e mostra no final
-
-### Exemplo:
-
-Quantos caracteres vai ter sua senha: 10
-Sua senha gerada foi: F3g@d9P#lA
-
-Feito por [OreOFDev](https://github.com/OreOFDev)
-
+[Feito Por OreDEV :D](github.com/OreOFDev)
